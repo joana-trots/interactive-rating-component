@@ -1,0 +1,92 @@
+/* FONTS */
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap')
+
+
+$serif: 'Overpass'
+$font_weight_regular: 400
+$font_weight_bolder: 700
+$font_size_paragraph: 15px
+$font_size_header: 1.75rem
+$font_size_rates: 15px    
+$font_size_button: 15px
+
+/* COLORS */
+
+/* Primary */
+$orange: hsl(25, 97%, 53%)
+
+/* Neutral */
+$white: hsl(0, 0%, 100%)
+$light_grey: hsl(217, 12%, 63%)
+$medium_grey: hsl(216, 12%, 54%)
+$dark_blue: hsl(213, 19%, 18%)
+$very_dark_blue: hsl(216, 12%, 8%)
+
+
+body
+    background: $very_dark_blue
+    height: 100vh
+    // width: 100vh
+    display: flex
+    justify-content: center
+    align-items: center
+    font-family: $serif
+
+    *
+        box-sizing: border-box
+        margin: 0
+        padding: 0
+
+section
+    width: 40vw
+    min-width: 360px
+    max-width: 400px
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    gap: 36px
+    padding: 36px
+    border-radius: 18px
+    background: linear-gradient($dark_blue, $very_dark_blue) 
+    color: $white
+    h2
+        font-weight: $font_weight_bolder
+        font-size: $font_size_header
+        margin-bottom: 16px
+    p
+        font-weight: $font_weight_regular
+        font-size: $font_size_paragraph
+        color: $light_grey
+        line-height: 26px
+        
+    .star
+        background: url('../images/icon-star.svg') center center no-repeat
+        height: 46px
+        width: 46px
+        background-color: $dark_blue
+        border-radius: 50%
+    ul
+        display: flex
+        justify-content: space-between
+        padding-inline-start: 0
+        li
+            height: 46px
+            width: 46px
+            list-style: none
+            background-color: $dark_blue
+            border-radius: 50%
+            display: flex
+            justify-content: center
+            align-items: center
+            color: $light_grey
+            font-size: $font_size_paragraph
+    button
+        width: 100%
+        padding: 15px
+        border-radius: 36px
+        border: 0
+        background-color: $orange
+        color: $white
+        text-transform: uppercase
+        letter-spacing: 3px
+        font-weight: $font_weight_bolder
