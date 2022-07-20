@@ -14,6 +14,7 @@ body
     background: $very_dark_blue
     font-family: $serif
     font-size: $font_size_paragraph
+    overflow: hidden
     *
         box-sizing: border-box
         margin: 0
@@ -96,3 +97,9 @@ section
             background-color: $white
             color: $orange 
             
+@media screen and (max-width:375px)
+    section
+        h2
+            font-size: $font_size_mobile_header
+        p, li
+            font-size: $font_size_mobile_paragraph

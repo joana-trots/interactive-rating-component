@@ -4,6 +4,7 @@
 /* font-family */
 /* font-weight */
 /* Font-size */
+/* Font-size mobile*/
 /* COLORS */
 /* Primary */
 /* Neutral */
@@ -37,6 +38,7 @@ body {
   background: hsl(216deg, 12%, 8%);
   font-family: "Overpass";
   font-size: 15px;
+  overflow: hidden;
 }
 body * {
   box-sizing: border-box;
@@ -144,6 +146,15 @@ section button {
 section button:hover {
   background-color: hsl(0deg, 0%, 100%);
   color: hsl(25deg, 97%, 53%);
+}
+
+@media screen and (max-width: 375px) {
+  section h2 {
+    font-size: 1.5rem;
+  }
+  section p, section li {
+    font-size: 13.5px;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */
