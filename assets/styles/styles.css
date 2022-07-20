@@ -1,15 +1,42 @@
 /* FONTS */
 @import url("https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap");
+/* FONTS */
+/* font-family */
+/* font-weight */
+/* Font-size */
 /* COLORS */
 /* Primary */
 /* Neutral */
-body {
-  background: hsl(216deg, 12%, 8%);
-  height: 100vh;
+section ul li, section.active, body {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
   display: flex;
+  -webkit-box-direction: normal;
+  -webkit-box-orient: vertical;
+  -moz-box-direction: normal;
+  -moz-box-orient: vertical;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
   align-items: center;
+}
+
+body {
+  height: 100vh;
+  background: hsl(216deg, 12%, 8%);
   font-family: "Overpass";
+  font-size: 15px;
 }
 body * {
   box-sizing: border-box;
@@ -18,17 +45,36 @@ body * {
 }
 
 section {
-  width: 40vw;
+  display: none;
+}
+section.active {
+  align-items: unset;
+  width: 50vw;
+  height: 450px;
   min-width: 360px;
   max-width: 400px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
   gap: 36px;
   padding: 36px;
   border-radius: 18px;
-  background: linear-gradient(hsl(213deg, 19%, 18%), hsl(216deg, 12%, 8%));
+  background: linear-gradient(hsl(213deg, 19%, 18%) -50%, hsl(216deg, 12%, 8%) 150%);
   color: hsl(0deg, 0%, 100%);
+}
+section.thankyou-state {
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  text-align: center;
+}
+section.thankyou-state .result {
+  color: hsl(25deg, 97%, 53%);
+  background-color: hsl(213deg, 19%, 18%);
+  border-radius: 20px;
+  padding: 8px 18px 5px;
+}
+section.thankyou-state .result a {
+  color: hsl(25deg, 97%, 53%);
 }
 section h2 {
   font-weight: 700;
@@ -41,6 +87,9 @@ section p {
   color: hsl(217deg, 12%, 63%);
   line-height: 26px;
 }
+section a, section button, section li {
+  cursor: pointer;
+}
 section .star {
   background: url("../images/icon-star.svg") center center no-repeat;
   height: 46px;
@@ -49,7 +98,15 @@ section .star {
   border-radius: 50%;
 }
 section ul {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
   display: flex;
+  -webkit-box-pack: justify;
+  -moz-box-pack: justify;
+  -ms-flex-pack: justify;
+  -webkit-justify-content: space-between;
   justify-content: space-between;
   padding-inline-start: 0;
 }
@@ -59,11 +116,19 @@ section ul li {
   list-style: none;
   background-color: hsl(213deg, 19%, 18%);
   border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   color: hsl(217deg, 12%, 63%);
   font-size: 15px;
+}
+section ul li:hover {
+  background-color: hsl(216deg, 12%, 54%);
+  color: hsl(0deg, 0%, 100%);
+}
+section ul li.active_rate {
+  background-color: hsl(25deg, 97%, 53%);
+  color: hsl(0deg, 0%, 100%);
+}
+section ul li a {
+  padding-top: 3px;
 }
 section button {
   width: 100%;
@@ -75,6 +140,10 @@ section button {
   text-transform: uppercase;
   letter-spacing: 3px;
   font-weight: 700;
+}
+section button:hover {
+  background-color: hsl(0deg, 0%, 100%);
+  color: hsl(25deg, 97%, 53%);
 }
 
 /*# sourceMappingURL=styles.css.map */

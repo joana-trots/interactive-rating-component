@@ -1,54 +1,48 @@
-/* FONTS */
-@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap')
+@import _fonts
+@import _flexbox
+@import _variables
 
-
-$serif: 'Overpass'
-$font_weight_regular: 400
-$font_weight_bolder: 700
-$font_size_paragraph: 15px
-$font_size_header: 1.75rem
-$font_size_rates: 15px    
-$font_size_button: 15px
-
-/* COLORS */
-
-/* Primary */
-$orange: hsl(25, 97%, 53%)
-
-/* Neutral */
-$white: hsl(0, 0%, 100%)
-$light_grey: hsl(217, 12%, 63%)
-$medium_grey: hsl(216, 12%, 54%)
-$dark_blue: hsl(213, 19%, 18%)
-$very_dark_blue: hsl(216, 12%, 8%)
-
+%centered
+    @include flexbox
+    @include flex-direction($direction: column)
+    @include justify-content($value: center)
+    @include align-items($value: center)
 
 body
-    background: $very_dark_blue
+    @extend %centered
     height: 100vh
-    // width: 100vh
-    display: flex
-    justify-content: center
-    align-items: center
+    background: $very_dark_blue
     font-family: $serif
-
+    font-size: $font_size_paragraph
     *
         box-sizing: border-box
         margin: 0
         padding: 0
 
 section
-    width: 40vw
-    min-width: 360px
-    max-width: 400px
-    display: flex
-    flex-direction: column
-    justify-content: space-between
-    gap: 36px
-    padding: 36px
-    border-radius: 18px
-    background: linear-gradient($dark_blue, $very_dark_blue) 
-    color: $white
+    display: none
+    &.active
+        @extend %centered
+        align-items: unset 
+        width: 50vw
+        height: 450px
+        min-width: 360px
+        max-width: 400px
+        gap: 36px
+        padding: 36px
+        border-radius: 18px
+        background: linear-gradient(hsl(213deg, 19%, 18%) -50%, hsl(216deg, 12%, 8%) 150%) 
+        color: $white
+    &.thankyou-state
+        @include align-items($value: center)
+        text-align: center
+        .result
+            color: $orange
+            background-color: $dark_blue
+            border-radius: 20px
+            padding: 8px 18px 5px
+            a
+                color: $orange
     h2
         font-weight: $font_weight_bolder
         font-size: $font_size_header
@@ -58,7 +52,8 @@ section
         font-size: $font_size_paragraph
         color: $light_grey
         line-height: 26px
-        
+    a, button, li
+        cursor: pointer
     .star
         background: url('../images/icon-star.svg') center center no-repeat
         height: 46px
@@ -66,20 +61,27 @@ section
         background-color: $dark_blue
         border-radius: 50%
     ul
-        display: flex
-        justify-content: space-between
+        @include flexbox
+        @include justify-content($value: space-between)
         padding-inline-start: 0
         li
+            @extend %centered
             height: 46px
             width: 46px
             list-style: none
             background-color: $dark_blue
             border-radius: 50%
-            display: flex
-            justify-content: center
-            align-items: center
             color: $light_grey
             font-size: $font_size_paragraph
+            &:hover
+                background-color: $medium_grey
+                color: $white
+            &.active_rate
+                background-color: $orange
+                color: $white
+            a
+                padding-top: 3px
+                
     button
         width: 100%
         padding: 15px
@@ -90,3 +92,7 @@ section
         text-transform: uppercase
         letter-spacing: 3px
         font-weight: $font_weight_bolder
+        &:hover
+            background-color: $white
+            color: $orange 
+            
